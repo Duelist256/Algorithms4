@@ -3,7 +3,7 @@ package part1._1_basic_programming_model.exercises;
 /**
  * Created by Duelist on 02.09.2017.
  */
-public class Exercise1111 {
+public class Exercise_1_1_11 {
     public static void main(String[] args) {
 
         System.out.println('b');

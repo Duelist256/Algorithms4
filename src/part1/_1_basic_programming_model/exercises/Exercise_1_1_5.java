@@ -8,7 +8,7 @@ import java.util.Scanner;
  * and prints equal if all three are equal, and not equal otherwise.
  **/
 
-public class Exercise115 {
+public class Exercise_1_1_5 {
     public static void main(String[] args) {
         int f = 0;
         int g = 1;
