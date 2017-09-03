@@ -1,8 +1,10 @@
 package part1._1_basic_programming_model.exercises;
 
 /**
- * Created by Duelist on 02.09.2017.
- */
+ * 1.1.11. Write a code fragment that prints the contents of a two-dimensional boolean
+ * array, using * to represent true and a space to represent false. Include row and
+ * column numbers.
+ **/
 public class Exercise_1_1_11 {
     public static void main(String[] args) {
 

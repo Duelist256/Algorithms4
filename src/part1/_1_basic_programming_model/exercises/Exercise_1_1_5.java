@@ -1,24 +1,15 @@
 package part1._1_basic_programming_model.exercises;
 
-import java.util.Locale;
 import java.util.Scanner;
 
 /**
- * 1.1.3 Write a program that takes three integer command-line arguments
- * and prints equal if all three are equal, and not equal otherwise.
+ * 1.1.5 Write a code fragment that prints true if the double variables
+ * x and y are both strictly between 0 and 1 and false otherwise.
  **/
 
 public class Exercise_1_1_5 {
     public static void main(String[] args) {
-        int f = 0;
-        int g = 1;
-
-        for (int i = 0; i <= 15; i++) {
-            System.out.println(f);
-            f = f + g;
-            g = f - g;
-        }
-//        System.out.println(foo());
+        System.out.println(foo());
     }
 
     private static boolean foo() {

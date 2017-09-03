@@ -1,8 +1,10 @@
 package part1._1_basic_programming_model.exercises;
 
 /**
- * Created by Duelist on 02.09.2017.
- */
+ * 1.1.9 Write a code fragment that puts the binary representation
+ * of a positive integer N into a String s.
+ **/
+
 public class Exercise_1_1_9 {
 
     public static void main(String[] args) {
