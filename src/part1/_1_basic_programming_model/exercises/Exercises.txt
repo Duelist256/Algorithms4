@@ -63,4 +63,22 @@ It's Fibonacci's numbers
     Code prints:
     0 1 2 3 4 5 6 7 8 9
 
-1.1.13
+1.1.13 +
+
+1.1.14 +
+
+1.1.15 +
+
+1.1.16 +
+    value is "311361142246"
+
+1.1.17 +
+    Infinite recursion. Base case must be first.
+
+1.1.18 +
+  1:
+    mystery(2, 25) = 50
+    mystery(3, 11) = 33
+  2:
+    mystery(2, 25) = 33554432
+    mystery(3, 11) = 177147
