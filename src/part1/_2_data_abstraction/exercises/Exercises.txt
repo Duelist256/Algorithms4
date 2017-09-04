@@ -3,3 +3,22 @@
 1.2.2 +
 
 1.2.3 +
+
+1.2.4 +
+    Code fragment prints:
+        world
+        hello
+
+1.2.5 +
+    Code fragment prints:
+        Hello World
+
+1.2.6. +
+
+1.2.7. +
+    Function returns reversed string
+
+1.2.8. +
+    The code just swap references of arrays
+
+1.2.9. +
