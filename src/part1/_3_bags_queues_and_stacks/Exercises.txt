@@ -29,3 +29,18 @@
 
 1.3.13 +
     b, c, d
+
+Exercises with Linked Lists
+
+1.3.18.+
+    Effect is: deleting element after x
+
+1.3.19. +
+    Node node = first;
+    while
+
+1.3.22 +
+    Insertion an element between x and x.next
+
+1.3.23 +
+    Because on second line next element after t will be t
