@@ -16,42 +16,25 @@ public class ResizingArrayQueueOfStrings {
         elements = new String[size];
     }
 
-    public static void main(String[] args) {
-        ResizingArrayQueueOfStrings queue = new ResizingArrayQueueOfStrings(5);
-        queue.enqueue("one");
-        queue.enqueue("two");
-        queue.enqueue("three");
-        queue.enqueue("four");
-        queue.enqueue("five");
-
-        System.out.println(queue.dequeue());
-        System.out.println(queue.dequeue());
-        System.out.println(queue.dequeue());
-        System.out.println(queue.dequeue());
-        System.out.println(queue.dequeue());
-
-        queue.enqueue("elem1");
-        queue.enqueue("elem2");
-        queue.enqueue("elem3");
-        queue.enqueue("elem4");
-        queue.enqueue("elem5");
-
-        System.out.println(queue.dequeue());
-        System.out.println(queue.dequeue());
-        System.out.println(queue.dequeue());
-        System.out.println(queue.dequeue());
-        System.out.println(queue.dequeue());
-    }
-
     private String dequeue() {
         if (size <= 0) {
             throw new RuntimeException("Queue is empty");
         }
 
-        String result = elements[pointer++];
+        String result = elements[pointer];
+        elements[pointer++] = null;
         size--;
 
         if (size == 0) {
+            pointer = 0;
+        }
+
+        if (size <= elements.length / 4) {
+            String[] newElements = new String[elements.length / 2];
+            for (int i = pointer, j = 0; i < pointer + size; i++, j++) {
+                newElements[j] = elements[i];
+            }
+            elements = newElements;
             pointer = 0;
         }
 
@@ -60,12 +43,43 @@ public class ResizingArrayQueueOfStrings {
 
     public void enqueue(String elem) {
         if (size >= elements.length) {
-            throw new RuntimeException("Queue is full");
+            String[] newElements = new String[elements.length * 2];
+            for (int i = pointer, j = 0; i < pointer + size; i++, j++) {
+                newElements[j] = elements[i];
+            }
+            elements = newElements;
+            pointer = 0;
         }
         elements[size++] = elem;
     }
 
     public int getSize() {
         return size;
+    }
+
+    public static void main(String[] args) {
+        ResizingArrayQueueOfStrings queue = new ResizingArrayQueueOfStrings(5);
+        queue.enqueue("one");
+        queue.enqueue("two");
+        queue.enqueue("three");
+        queue.enqueue("four");
+        queue.enqueue("five");
+
+        System.out.println(queue.getSize());
+
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+
+        for (int i = 1; i <= 10; i++) {
+            queue.enqueue("elem" + i);
+        }
+        System.out.println(queue.getSize());
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(queue.dequeue());
+        }
     }
 }
