@@ -1,11 +1,8 @@
 package part1._3_bags_queues_and_stacks;
 
-import edu.princeton.cs.algs4.Date;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.Queue;
 import edu.princeton.cs.algs4.Transaction;
-
-import java.util.Arrays;
 
 /**
  * 1.3.17 Do Exercise 1.3.16 for Transaction.
