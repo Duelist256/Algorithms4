@@ -16,38 +16,35 @@ public class Exercise_1_3_9 {
         Scanner scanner = new Scanner(System.in);
         String s = scanner.nextLine();
 
-        Stack<String> exprs = new Stack<>();
-        Stack<String> op = new Stack<>();
-        Stack<String> nums = new Stack<>();
+        Stack<String> operations = new Stack<>();
+        Stack<String> expressions = new Stack<>();
 
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             if (c == '+' || c == '-' || c == '*' || c == '/') {
-                op.push("" + c);
+                operations.push("" + c);
             }
 
             if (Character.isDigit(c)) {
-                nums.push("" + c);
+                expressions.push("" + c);
             }
 
             if (c == ')') {
                 String expression = "";
-                if (nums.size() == 1) {
-                    expression = "( " + nums.pop() + " " + c;
+                if (expressions.size() == 1) {
+                    expression = "( " + expressions.pop() + " " + c;
                 } else {
-                    String exp1 = nums.pop();
-                    String exp2 = nums.pop();
-                    expression = "( " + exp2 + " " + op.pop() + " " + exp1 + " "+ c;
-                    while (!nums.isEmpty()) {
-                        expression = nums.pop() + " " + op.pop() + " " + expression;
+                    String exp1 = expressions.pop();
+                    String exp2 = expressions.pop();
+                    expression = "( " + exp2 + " " + operations.pop() + " " + exp1 + " "+ c;
+                    while (!expressions.isEmpty()) {
+                        expression = expressions.pop() + " " + operations.pop() + " " + expression;
                     }
                 }
-
-                System.out.println(expression);
-                nums.push(expression);
+                expressions.push(expression);
             }
 
         }
-        System.out.println(nums.pop());
+        System.out.println(expressions.pop());
     }
 }
