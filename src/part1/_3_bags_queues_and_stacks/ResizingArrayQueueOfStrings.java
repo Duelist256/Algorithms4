@@ -18,19 +18,28 @@ public class ResizingArrayQueueOfStrings {
 
     public static void main(String[] args) {
         ResizingArrayQueueOfStrings queue = new ResizingArrayQueueOfStrings(5);
-        queue.enquque("one");
-        queue.enquque("two");
-        queue.enquque("three");
+        queue.enqueue("one");
+        queue.enqueue("two");
+        queue.enqueue("three");
+        queue.enqueue("four");
+        queue.enqueue("five");
 
         System.out.println(queue.dequeue());
         System.out.println(queue.dequeue());
         System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
 
-        queue.enquque("elem1");
-        queue.enquque("elem2");
-        queue.enquque("elem3");
+        queue.enqueue("elem1");
+        queue.enqueue("elem2");
+        queue.enqueue("elem3");
+        queue.enqueue("elem4");
+        queue.enqueue("elem5");
 
-        System.out.println(queue.pointer);
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
         System.out.println(queue.dequeue());
     }
 
@@ -39,9 +48,8 @@ public class ResizingArrayQueueOfStrings {
             throw new RuntimeException("Queue is empty");
         }
 
-        size--;
-
         String result = elements[pointer++];
+        size--;
 
         if (size == 0) {
             pointer = 0;
@@ -50,7 +58,7 @@ public class ResizingArrayQueueOfStrings {
         return result;
     }
 
-    public void enquque(String elem) {
+    public void enqueue(String elem) {
         if (size >= elements.length) {
             throw new RuntimeException("Queue is full");
         }
