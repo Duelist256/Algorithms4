@@ -104,4 +104,24 @@ It's Fibonacci's numbers
 
     Extended code (see Euclid.java)
 
-1.1.25
+1.1.25 -
+
+Creative Problems
+
+1.1.26 +
+    Assume that а = 1, b = 2, c = 3
+    1: false
+    2: false
+    3: false
+    All conditions will be false, numbers in ascending order
+    Assume that а = 2, b = 1, c = 3
+    1: true -> t = 2, a = 1, b = t (1, 2, 3)
+    2: false
+    3: false
+    Result is {1, 2, 3}
+    Assume that а = 3, b = 2, c = 1
+    1: true -> a = 2, b = 3, c = 1
+    2: true -> a = 1, b = 3, c = 2
+    3: true -> a = 1, b = 2, c = 3
+
+1.1.28 +
